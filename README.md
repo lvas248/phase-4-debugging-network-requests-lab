@@ -63,11 +63,17 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+    - looked at the Rails server logged, found NameError at app/controllers/tpys_controller.rb:10:in 'create'
 
 - Update the number of likes for a toy
 
   - How I debugged:
+    - Looked at browser console, which shows: SyntaxError: Unexpected end of JSON input
+    - Looked at controller to make sure likes were returning JSON
+    - added a lione of code that renders the toy object in JSON 
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+    -console shows 404 (not found) for DELETE
+    -I looked at the routes and noticed destory was missing from the resources, so i added it
